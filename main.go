@@ -1,9 +1,11 @@
 package main
 
 import (
-	firebase "firebase-authenticator/driver"
-	http "firebase-authenticator/http"
+	firebase "firebase-custom-auth/driver"
+	http "firebase-custom-auth/http/rest"
 	"fmt"
+
+	"google.golang.org/appengine"
 )
 
 func main() {
@@ -13,6 +15,7 @@ func main() {
 		fmt.Println("Error initializing firebase:", err.Error())
 	}
 
-	//Initializes server
 	http.Run()
+
+	appengine.Main()
 }

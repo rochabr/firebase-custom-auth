@@ -6,12 +6,12 @@ This project provides an API written in GO that exposes an endpoint which receiv
 
 For it to work, a firebase project needs to be created and a service account file named "service-acc.json" needs to be generated from the project options and placed in the root folder.
 
-This url currently requires an API Key to work, this can be easily changed by modifying the handler.go file.
+Since this project generates a JWT token based on a string value, it's assumed that this string value will also be a JWT token, so /api/token requires a Bearer token in its header. This can be easily changed in handler.go.
 
 ## Endpoints
 
 ```
-POST /api/token
+GET /api/token
 Generates custom token
 ```
 ```
@@ -21,7 +21,7 @@ Health
 
 ## To call
 ```
-curl -H 'X-API-Key: your-api-key' -d '{"token":"token_value"}' -X POST http://your-url/api/token
+curl -H 'Authorizationy: Bearer _your-api-key_' -X GET http://your-url/api/token
 ```
 
 ## Docker and Appengine
