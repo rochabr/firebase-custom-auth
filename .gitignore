@@ -4,7 +4,7 @@
 *.dll
 *.so
 *.dylib
-firebase-authenticator
+firebase-custom-auth
 
 # Test binary, build with `go test -c`
 *.test
